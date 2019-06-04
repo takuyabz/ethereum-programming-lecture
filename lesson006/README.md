@@ -30,10 +30,6 @@ Check Ganache GUI, CONTRACTS TAB
 
 Todo is DEPLOYED
 
-## Web3 Localize
-
-download from cdn
-
 ~~~ bash terminal
 npm init -y
 echo "node_modules" > .gitignore
