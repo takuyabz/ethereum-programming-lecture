@@ -10,9 +10,17 @@ Ethereumを使ったプログラミングレクチャーを
 
 このレクチャーで取り扱うテクノロジー領域は、
 Ethereum、Smart Contract、Solidity、Truffle、
-Ganache、Web3、Dapp、HTML、CSS、JavaScript、
-Vue、MetaMask、INFURAを対象としています。
+Ganache、Web3、Dapp、HTML、CSS、JavaScript、Stripe、
+Vue、Prisma、MetaMask、INFURA、AWSを対象としています。
 
+このレクチャーを終える頃には、
+実運用環境で稼働できるTODO管理アプリケーションを
+Ethereum環境（分散型アプリケーション）で
+構築し提供できるようになるでしょう。
+
+ただ、提供できるだけではなく、
+有料のWEBサービスとして世に出すことができるように
+なりますので、楽しみながら学びを進めてみてください。
 
 Ethereumを取り巻く環境は、日進月歩で進化し、
 インターネット上で見つかるソースコードや
