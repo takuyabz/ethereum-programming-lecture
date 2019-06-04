@@ -13,6 +13,8 @@ truffle migrate --reset
 ~~~ bash terminal
 vue init webpack-simple client
 cd client
+npm uninstall webpack-dev-server
+npm install webpack-dev-server
 npm install
 npm run dev
 code src App.vue
