@@ -28,6 +28,9 @@ window.onload =() => {
         await todo.setGreeting((new Date()).toString(), {from: accounts[0]});
         greetingElm.innerText = await todo.getGreeting();
       })
+      console.log(address);
+      console.log(network);
+      console.log(await web3.eth.getAccounts())
     }
   })();
 }

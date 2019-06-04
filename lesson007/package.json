@@ -1,0 +1,35 @@
+{
+  "name": "lesson007",
+  "version": "1.0.0",
+  "description": "integrate webpack",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "dev-front": "ENV=development node_modules/.bin/webpack --watch",
+    "dev-back": "nodemon server.js",
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Takuya Sato <business@satotakuya.jp> (https://www.satotakuya.jp/)",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "jquery": "^3.4.1",
+    "json-loader": "^0.5.7",
+    "truffle": "^5.0.20",
+    "truffle-contract": "^4.0.18",
+    "truffle-solidity-loader": "^0.1.19",
+    "web3": "^1.0.0-beta.37",
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.2"
+  }
+}
