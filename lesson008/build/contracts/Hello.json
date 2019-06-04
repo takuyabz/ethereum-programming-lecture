@@ -1,0 +1,296 @@
+{
+  "contractName": "Hello",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "sayHello",
+      "outputs": [
+        {
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"sayHello\",\"outputs\":[{\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"pure\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/tech/dev/prd/programming-lectures/lesson008/contracts/Hello.sol\":\"Hello\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/tech/dev/prd/programming-lectures/lesson008/contracts/Hello.sol\":{\"keccak256\":\"0x15b28208a58df179c6e88a963df5de1b0e0fb10edbbd30e4b77aaa9c1148d858\",\"urls\":[\"bzzr://4325201424d219487687a07507faf4976c56aad04d471409f0157f2b86904d38\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610118806100206000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c8063ef5fb05b14602d575b600080fd5b603360ab565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101560715780820151818401526020810190506058565b50505050905090810190601f168015609d5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b60606040518060600160405280602181526020016100cc6021913990509056fe48656c6c6f20576f726c642066726f6d20536d61727420436f6e74726163742121a165627a7a72305820a6937d2de47992ddd82c79aadbe9a372c7d8f668bdb32370b119f1672e6f9fff0029",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060285760003560e01c8063ef5fb05b14602d575b600080fd5b603360ab565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101560715780820151818401526020810190506058565b50505050905090810190601f168015609d5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b60606040518060600160405280602181526020016100cc6021913990509056fe48656c6c6f20576f726c642066726f6d20536d61727420436f6e74726163742121a165627a7a72305820a6937d2de47992ddd82c79aadbe9a372c7d8f668bdb32370b119f1672e6f9fff0029",
+  "sourceMap": "25:129:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;25:129:0;;;;;;;",
+  "deployedSourceMap": "25:129:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;25:129:0;;;;;;;;;;;;;;;;;;;44:108;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;44:108:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;84:13;105:42;;;;;;;;;;;;;;;;;;;44:108;:::o",
+  "source": "pragma solidity ^0.5.0;\n\ncontract Hello {\n  function sayHello() public pure returns(string memory) {\n    return \"Hello World from Smart Contract!!\";\n  }\n}",
+  "sourcePath": "/Users/tech/dev/prd/programming-lectures/lesson008/contracts/Hello.sol",
+  "ast": {
+    "absolutePath": "/Users/tech/dev/prd/programming-lectures/lesson008/contracts/Hello.sol",
+    "exportedSymbols": {
+      "Hello": [
+        10
+      ]
+    },
+    "id": 11,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:0"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 10,
+        "linearizedBaseContracts": [
+          10
+        ],
+        "name": "Hello",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 8,
+              "nodeType": "Block",
+              "src": "99:53:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "48656c6c6f20576f726c642066726f6d20536d61727420436f6e74726163742121",
+                    "id": 6,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "string",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "112:35:0",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_stringliteral_24250a442ef0feec9e28e79eaa0280bd082dc69175e42ec01e08eb62f2a23d05",
+                      "typeString": "literal_string \"Hello World from Smart Contract!!\""
+                    },
+                    "value": "Hello World from Smart Contract!!"
+                  },
+                  "functionReturnParameters": 5,
+                  "id": 7,
+                  "nodeType": "Return",
+                  "src": "105:42:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 9,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "sayHello",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "61:2:0"
+            },
+            "returnParameters": {
+              "id": 5,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9,
+                  "src": "84:13:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 3,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "84:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "83:15:0"
+            },
+            "scope": 10,
+            "src": "44:108:0",
+            "stateMutability": "pure",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 11,
+        "src": "25:129:0"
+      }
+    ],
+    "src": "0:154:0"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/tech/dev/prd/programming-lectures/lesson008/contracts/Hello.sol",
+    "exportedSymbols": {
+      "Hello": [
+        10
+      ]
+    },
+    "id": 11,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:0"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 10,
+        "linearizedBaseContracts": [
+          10
+        ],
+        "name": "Hello",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 8,
+              "nodeType": "Block",
+              "src": "99:53:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "48656c6c6f20576f726c642066726f6d20536d61727420436f6e74726163742121",
+                    "id": 6,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "string",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "112:35:0",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_stringliteral_24250a442ef0feec9e28e79eaa0280bd082dc69175e42ec01e08eb62f2a23d05",
+                      "typeString": "literal_string \"Hello World from Smart Contract!!\""
+                    },
+                    "value": "Hello World from Smart Contract!!"
+                  },
+                  "functionReturnParameters": 5,
+                  "id": 7,
+                  "nodeType": "Return",
+                  "src": "105:42:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 9,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "sayHello",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "61:2:0"
+            },
+            "returnParameters": {
+              "id": 5,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9,
+                  "src": "84:13:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 3,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "84:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "83:15:0"
+            },
+            "scope": 10,
+            "src": "44:108:0",
+            "stateMutability": "pure",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 11,
+        "src": "25:129:0"
+      }
+    ],
+    "src": "0:154:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.8+commit.23d335f2.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x33A73Bb5c5bF9473d2757339cc49e6E0C9f5D3C8",
+      "transactionHash": "0x5f2e6409ad18a06878f5151373c336382853aee575faca88456e50e9946341a4"
+    }
+  },
+  "schemaVersion": "3.0.10",
+  "updatedAt": "2019-06-04T21:19:51.253Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
