@@ -30,12 +30,12 @@ Ethereumを使ったプログラミングレクチャーを
 
 このレクチャーで取り扱うテクノロジー領域は、
 
-- Ethereum
+1. Ethereum
  - Smart Contract
  - Solidity
  - Truffle
  - Ganache
-- Dapp
+1. Dapp
  - HTML
  - CSS
  - JavaScript
