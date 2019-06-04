@@ -12,4 +12,8 @@ contract Todo {
     return tasks[i];
   }
 
+  function callEvent() public {
+    emit TaskEvent("call event");
+  }
+
 }
