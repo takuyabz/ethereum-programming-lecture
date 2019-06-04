@@ -11,7 +11,8 @@ Ethereumを使ったプログラミングレクチャーを
 このレクチャーで取り扱うテクノロジー領域は、
 Ethereum、Smart Contract、Solidity、Truffle、
 Ganache、Web3、Dapp、HTML、CSS、JavaScript、Stripe、
-Vue、Prisma、MetaMask、INFURA、AWSを対象としています。
+Vue、Vuetify、PWA、AMP、Prisma、GraphQL、
+MetaMask、INFURA、AWSを対象としています。
 
 このレクチャーを終える頃には、
 実運用環境で稼働できるTODO管理アプリケーションを
@@ -31,4 +32,4 @@ Ethereumを取り巻く環境は、日進月歩で進化し、
 整理体系化してあなたにお届けします。
 
 それでは、一緒にステップバイステップで
-学習を進めて、楽しいエンジニアリングを送っていきましょう。
+学習を進めて、楽しいエンジニアリングライフを送っていきましょう。
