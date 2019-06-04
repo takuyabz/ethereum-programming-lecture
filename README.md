@@ -31,25 +31,35 @@ Ethereumを使ったプログラミングレクチャーを
 このレクチャーで取り扱うテクノロジー領域は、
 
 - Ethereum
-- Smart Contract
-- Solidity
-- Truffle
-- Ganache
-- Web3
+ - Smart Contract
+ - Solidity
+ - Truffle
+ - Ganache
 - Dapp
-- HTML
-- CSS
-- JavaScript
-- Stripe
-- Vue
-- Vuetify
-- PWA
-- AMP
-- Prisma
-- GraphQL
-- MetaMask
-- INFURA
-- AWS
+ - HTML
+ - CSS
+ - JavaScript
+ - Web3
+ - Vue
+ - Vuetify
+ - Stripe
+ - PWA
+ - AMP
+- Client&Server
+ - Prisma
+ - GraphQL
+ - MetaMask
+- Mobile Device
+ - ionic Framework
+- Deploy
+ - INFURA
+ - AWS
+- Tools & Utility
+ - Puppeteer
+- Entertainment
+ - Unity
+ - Live2D
+ - Voiceroid
 
 を対象としています。
 
