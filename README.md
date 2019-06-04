@@ -35,7 +35,7 @@ Ethereumを使ったプログラミングレクチャーを
  - Solidity
  - Truffle
  - Ganache
-1. Dapp
+2. Dapp
  - HTML
  - CSS
  - JavaScript
@@ -45,18 +45,18 @@ Ethereumを使ったプログラミングレクチャーを
  - Stripe
  - PWA
  - AMP
-- Client&Server
+3. Client&Server
  - Prisma
  - GraphQL
  - MetaMask
-- Mobile Device
+4. Mobile Device
  - ionic Framework
-- Deploy
+5. Deploy
  - INFURA
  - AWS
-- Tools & Utility
+6. Tools & Utility
  - Puppeteer
-- Entertainment
+7. Entertainment
  - Unity
  - Live2D
  - Voiceroid
