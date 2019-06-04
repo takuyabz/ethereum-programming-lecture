@@ -1,8 +1,10 @@
 ## はじめに
 
-Ethereum Programming Lectureへようこそ。
+From：tech  Fixer
+南の島に向かう船
+午前7時27分
 
-こんにちわ、Tech Fixerです。
+こんにちは、TechFixerです。
 
 このレクチャーは、
 Ethereumを使ったプログラミングレクチャーを
