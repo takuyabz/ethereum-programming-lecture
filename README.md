@@ -1,7 +1,9 @@
 ## はじめに
 
 From：tech  Fixer
+
 南の島に向かう船
+
 午前7時27分
 
 こんにちは、TechFixerです。
