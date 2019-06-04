@@ -31,6 +31,38 @@ Web3.js v1.0.0-beta.37
 Ganache CLI v6.4.3 (ganache-core: 2.5.5)
 ~~~
 
+please Install VS Code
+https://azure.microsoft.com/ja-jp/products/visual-studio-code/
+
+please Check User Guid
+https://code.visualstudio.com/docs/getstarted/tips-and-tricks 
+
+## Checkpoint
+- CLI Interface
+  - code .
+  - code directory/file
+- Extensions
+  - Auto Close Tag
+  - Auto Rename Tag
+  - Bracker Pair Colozier
+  - Indent-Rainbow
+  - Material Icon Theme
+  - Material Theme
+  - npm Intelisense
+  - Path Intelisense
+  - solidity
+  - Terminal
+  - Terminal Tabs
+  - Vetur
+  - Visual Studio InteliCode
+  - vue
+  - Vue 2 Snippets
+  - Vue Snippets(vue-ls)
+  - Vue VSCode Snippets
+  - vue-beautify
+  - vue-format
+  - WakaTime
+
 ~~~ bash Step2 Truffle init
 mkdir lesson001
 cd lesson001
