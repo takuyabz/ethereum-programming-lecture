@@ -24,6 +24,7 @@ contract Todo {
     lastTaskId++;
     tasks[lastTaskId] = Task(lastTaskId, block.timestamp, _title, _description, _author, false);
     taskIds.push(lastTaskId);
+    emit TaskCreated(lastTaskId, block.timestamp, _title, _description, _author, false);
   }
 
   function getTaskIds() public view returns(uint[] memory) {

@@ -16,12 +16,23 @@ accounts = await web3.eth.getAccounts()
 contract = await Todo.deployed()
 contract.createTask("this is title", "this is description", "tech fixer");
 contract.createTask("this is title2", "this is description2", "tech fixer");
+events = await contract.getPastEvents()
+events[0].args
 contract.getTaskIds();
 contract.getTask(1);
 contract.getTask(2);
 ~~~
 
 ~~~ Result
+truffle(ganache)> events[0].args
+Result {
+  '0': <BN: 4>,
+  '1': <BN: 5cf64edc>,
+  '2': 'this is title2',
+  '3': 'this is description2',
+  '4': 'tech fixer',
+  '5': false,
+  __length__: 6 }
 truffle(ganache)> contract.getTaskIds();
 [ <BN: 1>, <BN: 2> ]
 truffle(ganache)> contract.getTask(1);
