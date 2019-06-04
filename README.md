@@ -60,6 +60,7 @@ Ethereumを使ったプログラミングレクチャーを
  - Unity
  - Live2D
  - Voiceroid
+ - ffmpeg
 
 を対象としています。
 
