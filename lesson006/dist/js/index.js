@@ -15,17 +15,18 @@ window.onload =() => {
       web3 = new Web3(web3Provider);
       var accounts = await web3.eth.getAccounts();
       artifacts = await fetch("Todo.json");
-      json = await artifacts.json();
-      console.log(json.abi);
-      var Todo = TruffleContract(json);
-      Todo.setProvider(web3Provider);
-      var instance = await Todo.deployed();
+      artifact = await artifacts.json();
+      abs = new TruffleContract(artifact);
+      abs.setProvider(web3Provider);
+      network = Object.keys(artifact.networks)[0];
+      address = artifact.networks[network].address;
+      todo = await abs.at(address);
       var greetingElm = document.getElementById("greeting");
-      greetingElm.innerText = await instance.getGreeting();
+      greetingElm.innerText = await todo.getGreeting();
       var actionElm = document.getElementById("action");
       actionElm.addEventListener("click",async function(){
-        await instance.setGreeting("Change Text!!", {from: accounts[0]});
-        greetingElm.innerText = await instance.getGreeting();
+        await todo.setGreeting((new Date()).toString(), {from: accounts[0]});
+        greetingElm.innerText = await todo.getGreeting();
       })
     }
   })();
