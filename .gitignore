@@ -1,5 +1,3 @@
-/server/wp-content/**/*
-/server/.data/*
-**/node_modules/*
-/wp-content/**/*
-/server/*
+node_modules
+wp-content
+.data
