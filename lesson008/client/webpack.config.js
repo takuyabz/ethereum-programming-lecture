@@ -4,6 +4,7 @@ var webpack = require('webpack')
 const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
 
 module.exports = {
+  mode: process.env.NODE_ENV,
   entry: ["babel-polyfill", './src/main.js'],
   output: {
     path: path.resolve(__dirname, './dist'),

@@ -1,4 +1,4 @@
-! Tutorial
+# Tutorial
 
 Vue.js + Webpack + Truffle = Wow!
 
@@ -13,9 +13,10 @@ truffle migrate --reset
 ~~~ bash terminal
 vue init webpack-simple client
 cd client
-npm uninstall webpack-dev-server
-npm install webpack-dev-server
 npm install
+npm uninstall webpack-dev-server
+npm i -D webpack-dev-server
+npm i -D webpack-cli 
 npm run dev
 code src App.vue
 rm -rf node_modules/websocket/.git
@@ -37,6 +38,7 @@ truffle compile
 touch migrations/2_deploy.js
 code migrations/2_deploy.js
 truffle migrate
+cd client
 ln -s `pwd`/../build/contracts src/assets
 cd client
 npm i -D truffle-contract
@@ -49,4 +51,7 @@ npm i -D uglifyjs-webpack-plugin@1
 code webpack.config.js
 npm run publish
 http-server
+npm un webpack-dev-server
+npm i -D webpack-dev-server
+npm i -D vue-loader@14.2.2
 ~~~
