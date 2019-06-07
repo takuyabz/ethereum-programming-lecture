@@ -1,0 +1,50 @@
+/*----Secondary-----*/
+
+#secondary {
+  ul {
+    list-style :none;
+    margin-left: 20px;
+    line-height: 2em;
+  }
+  h1.widget-title {
+    background: url(../../images/pattern3.png) repeat-x scroll 0% 100% transparent;
+    padding-bottom: 10px;
+    font-size: 25px;
+    padding-left: 10px;
+    color: @link-color;
+    text-transform: uppercase;
+  }
+  a {
+    .font2;
+    font-size: 14px;
+    color: #888;
+    &:hover {
+      color: #555;
+    }
+  }
+  li {
+    margin: 5px auto;
+    &:before {
+      content: "\f00c";
+      font-family: "FontAwesome";
+      font-size: 12px;
+      display: inline-block;
+      padding: 0px 8px;
+      margin-right: 10px;
+      color: @s-accent;
+    }
+  }
+  .widget_search {
+    label {
+      width: 100%;
+      input[type=search] {
+        width: 100%;
+        outline: none;
+        border-radius: 0px;
+        border-color: @s-accent;
+        border-width: 3px;
+        padding: 10px 5px;
+      }
+    }
+  }
+}

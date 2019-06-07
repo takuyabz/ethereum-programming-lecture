@@ -1,0 +1,20 @@
+{
+  "name": "lesson010",
+  "version": "1.0.0",
+  "description": "Vue.js + Webpack + Wordpress + Truffle => Wonderfull! ~~~ bash terminal mkdir lesson009 cd lesson009 truffle init truffle compile truffle migrate --reset ~~~",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "truffle-assertions": "^0.9.1",
+    "truffle-contract": "^4.0.19"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Takuya Sato <business@satotakuya.jp> (https://www.satotakuya.jp/)",
+  "license": "ISC"
+}

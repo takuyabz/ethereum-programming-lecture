@@ -1,0 +1,375 @@
+# Translation of Themes - Simpel in Japanese
+# This file is distributed under the same license as the Themes - Simpel package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2017-05-03 11:40:33+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: ja_JP\n"
+"Project-Id-Version: Themes - Simpel\n"
+
+#. Theme Name of the plugin/theme
+msgid "Simpel"
+msgstr "Simpel"
+
+#. Translators: If there are characters in your language that are not supported
+#. by Hammersmith One, translate this to 'off'. Do not translate into your own
+#. language.
+#: functions.php:95
+msgctxt "Oswald font: on or off"
+msgid "on"
+msgstr "on"
+
+#: functions.php:257
+msgid "Your comment is awaiting moderation."
+msgstr "あなたのコメントは承認待ちです。"
+
+#: functions.php:254
+msgid "<cite class=\"fn\">%s</cite>"
+msgstr "<cite class=\"fn\">%s</cite>"
+
+#: inc/customizer.php:36
+msgid "Site Title Color"
+msgstr "サイトタイトルの色"
+
+#: inc/customizer.php:18
+msgid "Site Description Color"
+msgstr "サイト説明の色"
+
+#: inc/customizer.php:86
+msgid "Show the Featured Image in Posts"
+msgstr "投稿にアイキャッチ画像を表示する"
+
+#. Translators: If there are characters in your language that are not supported
+#. by Open Sans, translate this to 'off'. Do not translate into your own
+#. language.
+#: functions.php:101
+msgctxt "Lato font: on or off"
+msgid "on"
+msgstr "on"
+
+#: search.php:17
+msgid "Search Results for: %s"
+msgstr "検索結果: %s"
+
+#: inc/template-tags.php:196
+msgid "Archives"
+msgstr "アーカイブ"
+
+#. translators: 1: Taxonomy singular name, 2: Current taxonomy term
+#: inc/template-tags.php:194
+msgid "%1$s: %2$s"
+msgstr "%1$s: %2$s"
+
+#: inc/template-tags.php:190
+msgid "Archives: %s"
+msgstr "アーカイブ: %s"
+
+#: inc/template-tags.php:188
+msgctxt "post format archive title"
+msgid "Chats"
+msgstr "チャット"
+
+#: inc/template-tags.php:186
+msgctxt "post format archive title"
+msgid "Audio"
+msgstr "音声"
+
+#: inc/template-tags.php:184
+msgctxt "post format archive title"
+msgid "Statuses"
+msgstr "ステータス"
+
+#: inc/template-tags.php:182
+msgctxt "post format archive title"
+msgid "Links"
+msgstr "リンク"
+
+#: inc/template-tags.php:180
+msgctxt "post format archive title"
+msgid "Quotes"
+msgstr "引用"
+
+#: inc/template-tags.php:178
+msgctxt "post format archive title"
+msgid "Videos"
+msgstr "動画"
+
+#: inc/template-tags.php:176
+msgctxt "post format archive title"
+msgid "Images"
+msgstr "画像"
+
+#: inc/template-tags.php:174
+msgctxt "post format archive title"
+msgid "Galleries"
+msgstr "ギャラリー"
+
+#: inc/template-tags.php:172
+msgctxt "post format archive title"
+msgid "Asides"
+msgstr "アサイド"
+
+#: inc/template-tags.php:170
+msgctxt "daily archives date format"
+msgid "F j, Y"
+msgstr "Y年n月j日"
+
+#: inc/template-tags.php:170
+msgid "Day: %s"
+msgstr "﻿日別: %s"
+
+#: inc/template-tags.php:168
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr "Y年n月"
+
+#: inc/template-tags.php:168
+msgid "Month: %s"
+msgstr "月別: %s"
+
+#: inc/template-tags.php:166
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr "Y年"
+
+#: inc/template-tags.php:166
+msgid "Year: %s"
+msgstr "﻿年別: %s"
+
+#: inc/template-tags.php:164
+msgid "Author: %s"
+msgstr "作者別: %s"
+
+#: inc/template-tags.php:162
+msgid "Tag: %s"
+msgstr "タグ: %s"
+
+#: inc/template-tags.php:160
+msgid "Category: %s"
+msgstr "カテゴリー: %s"
+
+#: inc/template-tags.php:141
+msgid "% Comments"
+msgstr "%件のコメント"
+
+#: inc/template-tags.php:141
+msgid "1 Comment"
+msgstr "1件のコメント"
+
+#: inc/template-tags.php:141
+msgid "Leave a comment"
+msgstr "コメントする"
+
+#. translators: 1: date, 2: time
+#: functions.php:264 inc/template-tags.php:129 inc/template-tags.php:135
+msgid "%1$s"
+msgstr "%1$s"
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:127 inc/template-tags.php:133
+msgid ", "
+msgstr ", "
+
+#: inc/template-tags.php:110
+msgctxt "post author"
+msgid "%s"
+msgstr "%s"
+
+#: inc/template-tags.php:105
+msgctxt "post date"
+msgid "%s"
+msgstr "%s"
+
+#: inc/template-tags.php:79
+msgctxt "Next post link"
+msgid "%title&nbsp;<span class=\"meta-nav\"></span>"
+msgstr "%title&nbsp;<span class=\"meta-nav\"></span>"
+
+#: inc/template-tags.php:78
+msgctxt "Previous post link"
+msgid "<span class=\"meta-nav\"></span>&nbsp;%title"
+msgstr "<span class=\"meta-nav\"></span>&nbsp;%title"
+
+#: inc/template-tags.php:75
+msgid "Post navigation"
+msgstr "投稿ナビゲーション"
+
+#: inc/template-tags.php:51
+msgid "Posts navigation"
+msgstr "投稿ナビゲーション"
+
+#: inc/template-tags.php:44
+msgid "Next &rarr;"
+msgstr "次へ &rarr;"
+
+#: inc/template-tags.php:43
+msgid "&larr; Previous"
+msgstr "&larr; 前へ"
+
+#: inc/extras.php:45
+msgid "Page %s"
+msgstr "ページ %s"
+
+#: home.php:18
+msgid "Recent Posts"
+msgstr "最近の投稿"
+
+#: header.php:80
+msgid "Skip to content"
+msgstr "コンテンツへスキップ"
+
+#: functions.php:174
+msgid "Footer 4"
+msgstr "フッター4"
+
+#: functions.php:165
+msgid "Footer 3"
+msgstr "フッター3"
+
+#: functions.php:156
+msgid "Footer 2"
+msgstr "フッター2"
+
+#: functions.php:147
+msgid "Footer 1"
+msgstr "フッター1"
+
+#: functions.php:138
+msgid "Sidebar"
+msgstr "サイドバー"
+
+#: inc/customizer.php:245
+msgid "Vimeo URL"
+msgstr "Vimeo URL"
+
+#: inc/customizer.php:228
+msgid "Youtube URL"
+msgstr "Youtube URL"
+
+#: inc/customizer.php:211
+msgid "Pinterest URL"
+msgstr "Pinterest URL"
+
+#: inc/customizer.php:194
+msgid "Instagram URL"
+msgstr "Instagram URL"
+
+#: inc/customizer.php:177
+msgid "Google Plus URL"
+msgstr "Google Plus URL"
+
+#: inc/customizer.php:160
+msgid "Twitter URL"
+msgstr "Twitter URL"
+
+#: inc/customizer.php:143
+msgid "Facebook URL"
+msgstr "Facebook URL"
+
+#: inc/customizer.php:126
+msgid "Enable Social Icons"
+msgstr "ソーシャルアイコンを有効にする"
+
+#: inc/customizer.php:110
+msgid "Manage the Social Icon Setings of your site."
+msgstr "サイトのソーシャルアイコン設定を管理します。"
+
+#: inc/customizer.php:109
+msgid "Social Settings"
+msgstr "ソーシャル設定"
+
+#: inc/customizer.php:99
+msgid "OR Logo Upload"
+msgstr "またはロゴをアップロード"
+
+#: functions.php:47 header.php:24
+msgid "Primary Menu"
+msgstr "メインメニュー"
+
+#: footer.php:46
+msgid "Theme: %1$s by %2$s."
+msgstr "Theme: %1$s by %2$s."
+
+#: footer.php:44
+msgid "Proudly powered by %s"
+msgstr "Proudly powered by %s"
+
+#: footer.php:44
+msgid "http://wordpress.org/"
+msgstr "https://ja.wordpress.org/"
+
+#. translators: %s: Name of current post
+#: content.php:26
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr "続きを読む %s <span class=\"meta-nav\">&rarr;</span>"
+
+#: content-page.php:25 content-single.php:41 functions.php:264
+msgid "Edit"
+msgstr "編集"
+
+#: content-page.php:18 content-single.php:32 content.php:33
+msgid "Pages:"
+msgstr "ページ:"
+
+#: content-none.php:28
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "お探しのコンテンツを見つけられませんでした。検索をお試しください。"
+
+#: content-none.php:23
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "ご指定の検索条件に一致する投稿がありませんでした。他のキーワードでもう一度検索してみてください。"
+
+#: content-none.php:19
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "最初の投稿をする準備ができましたか ?  <a href=\"%1$s\">ここからスタート</a>してください。"
+
+#: content-none.php:13
+msgid "Nothing Found"
+msgstr "見つかりません"
+
+#: comments.php:64
+msgid "Comments are closed."
+msgstr "コメントは停止中です。"
+
+#: comments.php:37 comments.php:54
+msgid "Newer Comments &rarr;"
+msgstr "新しいコメント &rarr;"
+
+#: comments.php:36 comments.php:53
+msgid "&larr; Older Comments"
+msgstr "&larr; 過去のコメント"
+
+#: comments.php:35 comments.php:52
+msgid "Comment navigation"
+msgstr "コメントナビゲーション"
+
+#: comments.php:28
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "「%2$s」への%1$s件のフィードバック"
+
+#. translators: %1$s: smiley
+#: 404.php:44
+msgid "Try looking in the monthly archives. %1$s"
+msgstr "月別アーカイブを探してみてください %1$s"
+
+#: 404.php:27
+msgid "Most Used Categories"
+msgstr "よく使われているカテゴリー"
+
+#: 404.php:19
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgstr "ここにはなにもないようです。下記のリンクまたは検索を試してみてください。"
+
+#: 404.php:15
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "このページは見つかりません。"
+
+#. Author of the plugin/theme
+msgid "Divjot Singh"
+msgstr "Divjot Singh"
