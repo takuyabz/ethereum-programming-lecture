@@ -3,6 +3,7 @@ const truffleAssert = require("truffle-assertions");
 
 contract("Whitelist", async accounts => {
   it("greeting", async () => {
+    instance = await Whitelist.deployed();
     message = await instance.greeting();
     assert.equal(message, "Hello Whitelist");
   });
