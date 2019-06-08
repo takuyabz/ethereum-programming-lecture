@@ -1,0 +1,79 @@
+/*----Comments----*/
+
+#comments {
+  color: #555;
+  .font2;
+  h2.comments-title {
+    background: url(../../images/pattern3.png) repeat-x;
+    padding: 10px 5px;
+  }
+  ol {
+    list-style: none;
+    span {
+      display: none;
+    }
+    li {
+      padding-top: 10px;
+      margin-top: 20px;
+      .vcard {
+        display: block;
+        .fn {
+          margin-left: 5px;
+          font-family: "Oswald", sans-serif;
+        }
+      }
+      .comment-metadata {
+        display: inline-block;
+        width: 100%;
+        background: url(../../images/pattern3.png) 0 50% repeat-x;
+        font-size: 10px;
+        margin: 10px auto;
+        a {
+          color: #5aca77;
+          background: white;
+          padding-right: 10px;
+        }
+        span {
+          position: absolute;
+          display: block;
+          float: left;
+          background: white;
+        }
+      }
+      .comment-content {
+        margin-top: 10px;
+        padding-top: 10px;
+        margin-bottom: 10px;
+      }
+      .reply {
+        display: block;
+        width: 100%;
+        text-align: right;
+        font-size: 12px;
+        font-style: italic;
+      }
+    }
+  }
+  #respond {
+    text-align: center;
+    font-weight: 200;
+    form.comment-form {
+      .form-allowed-tags {
+        display: none;
+      }
+      p.form-submit {
+        input[type="submit"] {
+          background: #5fcb7b;
+          box-shadow: none;
+          text-shadow: none;
+          color: white;
+          padding: 10px;
+          border: none;
+        }
+      }
+      textarea {
+        outline: none;
+      }
+    }
+  }
+}

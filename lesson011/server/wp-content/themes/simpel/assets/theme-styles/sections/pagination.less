@@ -1,0 +1,56 @@
+/*----Pagination----*/
+
+.pagination {
+  display: block;
+  clear: both;
+  text-align: center;
+}
+
+.pagination li {
+  list-style: none;
+  float: left;
+  color: #888;
+  span {
+    background: none;
+    padding: 10px;
+    margin-right: 1px;
+  }
+  .page_count:after {
+    content: "\f105";
+    font-family: "FontAwesome";
+    color: @accent;
+    margin-right: 15px;
+  }
+  .page_count:before {
+    content: "\f104";
+    font-family: "FontAwesome";
+    color: @accent;
+  }
+}
+.pagination ul {
+  float: none;
+  display: inline-block;
+}
+.pagination a {
+  color: #ddd;
+  background: none;
+  padding: 10px;
+  margin-left: 1px;
+  text-decoration: none;
+}
+.pagination .dots {
+  background: none;
+  border: none;
+}
+.pagination .current {
+  background: @s-accent;
+  color: @background;
+  border-right: none;
+  padding: 5px 8px;
+  margin: 0;
+  margin-left: 1px;
+}
+.pagination a:hover {
+  background: none;
+  color: darken(#ddd, 50%);
+}

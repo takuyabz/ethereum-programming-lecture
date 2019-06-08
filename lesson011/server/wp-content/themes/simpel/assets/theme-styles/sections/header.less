@@ -1,0 +1,123 @@
+/* ------Header------- */
+
+.site-header {
+  display:inline-block;
+  width: 100%;
+  height: auto;
+  .site-branding {
+    text-align: center;
+    z-index: 2;
+    top: 30%;
+    position: relative;
+    .site-title {
+      display: inline-block;
+      margin: 0px;
+      padding: 5px 20px 5px 10px;
+      position: relative;
+      clear: both;
+      a {
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+    }
+    #site-description {
+      display: block;
+      margin-top: 10px;
+      .site-description {
+        position: relative;
+        display: inline-block;
+        font-size: 15px;
+        margin-top: 0px;
+        padding: 5px 20px 5px 10px;
+        font-weight: 300;
+        clear: left;
+      }
+    }
+    #site-logo img {
+      max-height: 150px;
+    }
+  }
+}
+
+.header-image {
+  position: relative;
+  height:400px;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 1;
+}
+
+#search-top {
+  margin: 15px 0px;
+  form#searchform {
+    text-align: left;
+    input[type=text] {
+      width: 40%;
+      border-radius: 10px;
+      outline: none;
+      background: rgba(255,255,255,.2);
+      border: none;
+      color: rgba(255,255,255,.4);
+    }
+    button {
+      background: none;
+      box-shadow: none;
+      border: none;
+      padding: 0px;
+      position: relative;
+      left: -30px;
+      bottom: -1px;
+      i {
+        background: none;
+        font-size: 15px;
+        text-shadow: none;
+        color: rgba(255,255,255,.4);
+      }
+    }
+  }
+}
+
+.search-wrapper {
+  float: none;
+  clear: both;
+  text-align: center;
+  width: 100%;
+  background: rgba(0,0,0,.6);
+  position: absolute;
+  z-index: 3;
+  bottom: 0px;
+  #social-icons {
+    text-align: right;
+    padding-top: 15px;
+    i {
+      color: rgba(255,255,255,.4);
+      font-size: 27px;
+      margin: 0 13px;
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .search-wrapper {
+    #social-icons {
+      text-align: center;
+    }
+    #searchform {
+      text-align: center !important;
+      input[type=text] {
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  #social-icons {
+    padding: 0px;
+    padding: 10px 5px;
+  }
+  .header-image {
+    height: 450px;
+  }
+}
