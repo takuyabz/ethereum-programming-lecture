@@ -1,6 +1,6 @@
 pragma solidity ^0.5.0;
 
-contract Owned {
+contract SampleOwned {
   constructor () public {
     owner = msg.sender;
   }
@@ -8,5 +8,9 @@ contract Owned {
   modifier onlyOwner {
     require(msg.sender == owner, "only owner");
     _;
+  }
+
+  function greet() public pure returns(string memory){
+    return "Hello Owned";
   }
 }

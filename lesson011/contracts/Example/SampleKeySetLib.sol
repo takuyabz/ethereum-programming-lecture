@@ -1,6 +1,6 @@
 pragma solidity ^0.5.0;
 
-library KeySetLib {
+library SampleKeySetLib {
   struct Set {
     mapping(bytes32 => uint) keyMap;
     bytes32[] keyList;

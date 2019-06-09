@@ -1,12 +1,12 @@
 pragma solidity ^0.5.0;
 
-import "./Whitelist.sol";
-import "./Owned.sol";
-import "./KeySetLib.sol";
+import "./SampleWhitelist.sol";
+import "./SampleOwned.sol";
+import "./SampleKeySetLib.sol";
 
-contract Article is Owned, Whitelist {
-  using KeySetLib for KeySetLib.Set;
-  KeySetLib.Set contentSet;
+contract SampleArticle is SampleOwned, SampleWhitelist {
+  using SampleKeySetLib for SampleKeySetLib.Set;
+  SampleKeySetLib.Set contentSet;
 
   struct ContentStruct {
     string title;
@@ -136,13 +136,14 @@ contract Article is Owned, Whitelist {
     return contentSet.keyAtIndex(index);
   }
 
-  function greetArticle() 
+  function greeting() 
     public 
-    pure 
+    view 
     returns(
       string memory
     ) 
   {
+    super.greeting();
     return "Hello Article";
   }
 

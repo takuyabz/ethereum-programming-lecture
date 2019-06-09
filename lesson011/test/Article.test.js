@@ -125,15 +125,3 @@ contract("Article", async accounts => {
     }
   });
 });
-
-// // const Web3 = require("web3");
-// // const TruffleContract = require("truffle-contract");
-// // const Whitelist = artifacts.require("./Whitelist.sol");
-// // const web3 = new Web3("http://localhost:9545");
-// // const artifact = TruffleContract(Whitelist);
-// // artifact.setProvider(web3.currentProvider);
-// // async function test() {
-// //   const instance = await artifact.deployed();
-// //   const message = await instance.greeting();
-// //   return Promise.resolve(message);
-// // }

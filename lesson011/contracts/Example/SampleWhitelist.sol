@@ -1,8 +1,8 @@
 pragma solidity ^0.5.0;
 
-import "./Owned.sol";
+import "./SampleOwned.sol";
 
-contract Whitelist is Owned{
+contract SampleWhitelist is SampleOwned{
   /* USECASE
   // 管理者が書面相当で投稿者（著作者）の情報を得る
   // 投稿者のアドレス情報をコントラクトに登録
@@ -66,6 +66,7 @@ contract Whitelist is Owned{
   }
 
   function greeting() public view onlyOwner returns(string memory) {
+    super.greet();
     return "Hello Whitelist";
   }
 }

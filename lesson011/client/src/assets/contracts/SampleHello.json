@@ -1,5 +1,5 @@
 {
-  "contractName": "Hello",
+  "contractName": "SampleHello",
   "abi": [
     {
       "constant": true,
@@ -16,17 +16,17 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"sayHello\",\"outputs\":[{\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"pure\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/tech/dev/prd/programming-lectures/lesson011/contracts/Example/Hello.sol\":\"Hello\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/tech/dev/prd/programming-lectures/lesson011/contracts/Example/Hello.sol\":{\"keccak256\":\"0x771c70fcfe71fa6af0bb41021ab0d25db911ed9c0e5c861b8d50ddbf10b7b17b\",\"urls\":[\"bzzr://bf43243160f9420a9a1c0a9b898ccb3b8fb563d465974cfc0ad4c8f86d3cbc20\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b50610118806100206000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c8063ef5fb05b14602d575b600080fd5b603360ab565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101560715780820151818401526020810190506058565b50505050905090810190601f168015609d5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b60606040518060600160405280602181526020016100cc6021913990509056fe48656c6c6f20576f726c64212066726f6d20536d61727420436f6e747261637421a165627a7a723058209d27cb21491140b4fc3fad99a60f45db3ebed18c9e5395def2dafc78223fb13d0029",
-  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060285760003560e01c8063ef5fb05b14602d575b600080fd5b603360ab565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101560715780820151818401526020810190506058565b50505050905090810190601f168015609d5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b60606040518060600160405280602181526020016100cc6021913990509056fe48656c6c6f20576f726c64212066726f6d20536d61727420436f6e747261637421a165627a7a723058209d27cb21491140b4fc3fad99a60f45db3ebed18c9e5395def2dafc78223fb13d0029",
-  "sourceMap": "25:129:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;25:129:1;;;;;;;",
-  "deployedSourceMap": "25:129:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;25:129:1;;;;;;;;;;;;;;;;;;;44:108;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;44:108:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;84:13;105:42;;;;;;;;;;;;;;;;;;;44:108;:::o",
-  "source": "pragma solidity ^0.5.0;\n\ncontract Hello {\n  function sayHello() public pure returns(string memory) {\n    return \"Hello World! from Smart Contract!\";\n  }\n}",
-  "sourcePath": "/Users/tech/dev/prd/programming-lectures/lesson011/contracts/Example/Hello.sol",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"sayHello\",\"outputs\":[{\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"pure\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/tech/dev/prd/programming-lectures/lesson011/contracts/Example/SampleHello.sol\":\"SampleHello\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/tech/dev/prd/programming-lectures/lesson011/contracts/Example/SampleHello.sol\":{\"keccak256\":\"0x2881a64cadf5b07cac14a8ae76b24b57fe68a332fe785f218771e5f281d30a47\",\"urls\":[\"bzzr://994e66113ffb48292e6e67ebb5ca41e41fc98041fcfa9d1d55079e57b4c1122a\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610118806100206000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c8063ef5fb05b14602d575b600080fd5b603360ab565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101560715780820151818401526020810190506058565b50505050905090810190601f168015609d5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b60606040518060600160405280602181526020016100cc6021913990509056fe48656c6c6f20576f726c64212066726f6d20536d61727420436f6e747261637421a165627a7a7230582082c3d7e3e2b0bd95136901d1019a9d9d4c2d458f582563304e4fbf323d17fa190029",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060285760003560e01c8063ef5fb05b14602d575b600080fd5b603360ab565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101560715780820151818401526020810190506058565b50505050905090810190601f168015609d5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b60606040518060600160405280602181526020016100cc6021913990509056fe48656c6c6f20576f726c64212066726f6d20536d61727420436f6e747261637421a165627a7a7230582082c3d7e3e2b0bd95136901d1019a9d9d4c2d458f582563304e4fbf323d17fa190029",
+  "sourceMap": "25:135:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;25:135:1;;;;;;;",
+  "deployedSourceMap": "25:135:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;25:135:1;;;;;;;;;;;;;;;;;;;50:108;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;50:108:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;90:13;111:42;;;;;;;;;;;;;;;;;;;50:108;:::o",
+  "source": "pragma solidity ^0.5.0;\n\ncontract SampleHello {\n  function sayHello() public pure returns(string memory) {\n    return \"Hello World! from Smart Contract!\";\n  }\n}",
+  "sourcePath": "/Users/tech/dev/prd/programming-lectures/lesson011/contracts/Example/SampleHello.sol",
   "ast": {
-    "absolutePath": "/Users/tech/dev/prd/programming-lectures/lesson011/contracts/Example/Hello.sol",
+    "absolutePath": "/Users/tech/dev/prd/programming-lectures/lesson011/contracts/Example/SampleHello.sol",
     "exportedSymbols": {
-      "Hello": [
+      "SampleHello": [
         326
       ]
     },
@@ -54,14 +54,14 @@
         "linearizedBaseContracts": [
           326
         ],
-        "name": "Hello",
+        "name": "SampleHello",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
               "id": 324,
               "nodeType": "Block",
-              "src": "99:53:1",
+              "src": "105:53:1",
               "statements": [
                 {
                   "expression": {
@@ -74,7 +74,7 @@
                     "kind": "string",
                     "lValueRequested": false,
                     "nodeType": "Literal",
-                    "src": "112:35:1",
+                    "src": "118:35:1",
                     "subdenomination": null,
                     "typeDescriptions": {
                       "typeIdentifier": "t_stringliteral_7136896d746d2fe77eb7ddd0eb42dafe5b024aa1f7a09004b9dc9ffe9813ac3e",
@@ -85,7 +85,7 @@
                   "functionReturnParameters": 321,
                   "id": 323,
                   "nodeType": "Return",
-                  "src": "105:42:1"
+                  "src": "111:42:1"
                 }
               ]
             },
@@ -100,7 +100,7 @@
               "id": 318,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "61:2:1"
+              "src": "67:2:1"
             },
             "returnParameters": {
               "id": 321,
@@ -112,7 +112,7 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "scope": 325,
-                  "src": "84:13:1",
+                  "src": "90:13:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -123,7 +123,7 @@
                     "id": 319,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "84:6:1",
+                    "src": "90:6:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -133,25 +133,25 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "83:15:1"
+              "src": "89:15:1"
             },
             "scope": 326,
-            "src": "44:108:1",
+            "src": "50:108:1",
             "stateMutability": "pure",
             "superFunction": null,
             "visibility": "public"
           }
         ],
         "scope": 327,
-        "src": "25:129:1"
+        "src": "25:135:1"
       }
     ],
-    "src": "0:154:1"
+    "src": "0:160:1"
   },
   "legacyAST": {
-    "absolutePath": "/Users/tech/dev/prd/programming-lectures/lesson011/contracts/Example/Hello.sol",
+    "absolutePath": "/Users/tech/dev/prd/programming-lectures/lesson011/contracts/Example/SampleHello.sol",
     "exportedSymbols": {
-      "Hello": [
+      "SampleHello": [
         326
       ]
     },
@@ -179,14 +179,14 @@
         "linearizedBaseContracts": [
           326
         ],
-        "name": "Hello",
+        "name": "SampleHello",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
               "id": 324,
               "nodeType": "Block",
-              "src": "99:53:1",
+              "src": "105:53:1",
               "statements": [
                 {
                   "expression": {
@@ -199,7 +199,7 @@
                     "kind": "string",
                     "lValueRequested": false,
                     "nodeType": "Literal",
-                    "src": "112:35:1",
+                    "src": "118:35:1",
                     "subdenomination": null,
                     "typeDescriptions": {
                       "typeIdentifier": "t_stringliteral_7136896d746d2fe77eb7ddd0eb42dafe5b024aa1f7a09004b9dc9ffe9813ac3e",
@@ -210,7 +210,7 @@
                   "functionReturnParameters": 321,
                   "id": 323,
                   "nodeType": "Return",
-                  "src": "105:42:1"
+                  "src": "111:42:1"
                 }
               ]
             },
@@ -225,7 +225,7 @@
               "id": 318,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "61:2:1"
+              "src": "67:2:1"
             },
             "returnParameters": {
               "id": 321,
@@ -237,7 +237,7 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "scope": 325,
-                  "src": "84:13:1",
+                  "src": "90:13:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -248,7 +248,7 @@
                     "id": 319,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "84:6:1",
+                    "src": "90:6:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -258,20 +258,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "83:15:1"
+              "src": "89:15:1"
             },
             "scope": 326,
-            "src": "44:108:1",
+            "src": "50:108:1",
             "stateMutability": "pure",
             "superFunction": null,
             "visibility": "public"
           }
         ],
         "scope": 327,
-        "src": "25:129:1"
+        "src": "25:135:1"
       }
     ],
-    "src": "0:154:1"
+    "src": "0:160:1"
   },
   "compiler": {
     "name": "solc",
@@ -281,12 +281,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0xcE09Db37721114Fb8c7b23EDA8D19BC593780106",
-      "transactionHash": "0xd9797d06170f420a4213cff02782370166fb16367fd15514365ecf44f28cb08e"
+      "address": "0x49803635022BD84B77dE17374ba257478546cBAB",
+      "transactionHash": "0x02c0c593cb3845023c1f0561ef77cbfd838052c76be0e72a9f8ef57ecf8b5d1d"
     }
   },
   "schemaVersion": "3.0.10",
-  "updatedAt": "2019-06-08T23:06:38.153Z",
+  "updatedAt": "2019-06-09T02:07:45.167Z",
   "devdoc": {
     "methods": {}
   },

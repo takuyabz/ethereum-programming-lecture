@@ -1,10 +1,10 @@
 pragma solidity ^0.5.0;
 
-import "./KeySetLib.sol";
+import "./SampleKeySetLib.sol";
 
-contract KeySet {
-  using KeySetLib for KeySetLib.Set;
-  KeySetLib.Set set;
+contract SampleKeySet {
+  using SampleKeySetLib for SampleKeySetLib.Set;
+  SampleKeySetLib.Set set;
 
   event LogUpdate(address sender, string action, bytes32 key);
 
