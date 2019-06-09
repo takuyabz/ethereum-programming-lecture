@@ -4,59 +4,80 @@ import "./TradePurchaser.sol";
 
 contract Resale is TradePurchaser {
   struct ResaleStruct {
+    uint256 cid;
     uint256 price; // 二次販売価格
+    uint256 limitSupply; // 発行上限
+    uint256 totalSupply; // 発行数
+    address owner;
+    address purchaser;
     bool publish; // 販売ステータス(true:販売中/false:販売停止中)
     mapping(address  => bool) customerMap;
   }
   mapping(uint256 => ResaleStruct) resaleMap;
 
   function updateResaleInfo(
-    uint256 cid, 
+    uint256 tid,
     uint256 price,
+    uint256 limitSupply,
     bool publish
   ) 
     external  
   {
-    require(ownerOf(cid) == msg.sender);
+    (uint256 cid, address owner, address purchaser) = super.getLogTrade(tid);
+    require(purchaser == msg.sender);
     require(_exists(cid));
-    ResaleStruct storage resale = resaleMap[cid];
+    ResaleStruct storage resale = resaleMap[tid];
+    resale.cid = cid;
     resale.price = price;
+    resale.limitSupply = limitSupply;
     resale.publish = publish;
+    resale.owner = owner;
+    resale.purchaser = purchaser;
     resale.customerMap[msg.sender] = true;
   }
 
   function getResaleInfo(
-    uint256 cid
+    uint256 tid
   ) 
     external 
     view 
     returns(
-      uint256 price,
-      bool publish
+      address,
+      address,
+      uint256,
+      uint256,
+      uint256,
+      uint256,
+      bool
     )
   {
-    require(_exists(cid));
-    ResaleStruct storage resale = resaleMap[cid];
+    ResaleStruct storage resale = resaleMap[tid];
+    require(_exists(resale.cid));
     return (
+      resale.owner,
+      resale.purchaser,
+      resale.cid,
       resale.price,
+      resale.limitSupply,
+      resale.totalSupply,
       resale.publish
     );
   }
 
   modifier onlySigner(
-    uint256 cid
+    uint256 tid
   ) {
-    ResaleStruct storage resale = resaleMap[cid];
+    ResaleStruct storage resale = resaleMap[tid];
     require(resale.customerMap[msg.sender], "not signed, please updateInfo");
     _;
   }
 
-  function getContent(
-    uint256 cid
+  function getResaleContent(
+    uint256 tid
   )
     external 
     view 
-    onlySigner(cid)
+    onlySigner(tid)
     returns(
       uint256, 
       string memory, 
@@ -65,24 +86,33 @@ contract Resale is TradePurchaser {
       address 
     ) 
   {
-    require(_exists(cid));
-    return super._getContent(cid);
+    ResaleStruct storage resale = resaleMap[tid];
+    require(_exists(resale.cid));
+    return super._getContent(resale.cid);
   }
 
-  modifier notResalePurchased(uint256 cid) {
-    ResaleStruct storage resale = resaleMap[cid];
+  modifier notResalePurchased(uint256 tid) {
+    ResaleStruct storage resale = resaleMap[tid];
     require(resale.customerMap[msg.sender] == false, "resale exist");
     _;
   }
 
+  modifier notLimitSupply(uint256 tid) {
+    ResaleStruct storage trade = resaleMap[tid];
+    require(trade.limitSupply > trade.totalSupply, "supply overflow");
+    _;
+  }
+
+
   function _purchaseResale(
-    uint256 cid
+    uint256 tid
   )
     internal
-    notResalePurchased(cid)
+    notLimitSupply(tid)
+    notResalePurchased(tid)
   {
-    require(_exists(cid));
-    ResaleStruct storage resale = resaleMap[cid];
+    ResaleStruct storage resale = resaleMap[tid];
+    require(_exists(resale.cid));
     resale.customerMap[msg.sender] = true;
   }
 

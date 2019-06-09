@@ -1,21 +1,12 @@
 pragma solidity ^0.5.0;
 
-import "./Trade.sol";
+import "./TradeHistory.sol";
 
-contract TradePurchaser is Trade {
-  mapping(address => uint[]) tradePurchased;
-
-  // 購入者による売り出し中の記事一覧
-  // function countPurchase() public view returns(uint256){
-  //   // uint256 numberOfTradeList = 0;
-  //   for (uint256 i = 0; i < super.count(); i++) {
-  //     if (tradeMap[i].publish) {
-
-  //     }
-  //   }
-  //   return 1;
-  // }
-
+contract TradePurchaser is TradeHistory {
+  struct TradePurchaseStruct {
+    uint256[] purchaseList;
+  }
+  mapping(address => TradePurchaseStruct) tradePurchased;
 
   modifier sameTradePrice(
     uint256 cid
@@ -35,7 +26,7 @@ contract TradePurchaser is Trade {
   {
     super._purchaseTrade(cid);
     TradeStruct storage trade = tradeMap[cid];
-    tradePurchased[ownerOf(cid)].push(cid);
+    tradePurchased[ownerOf(cid)].purchaseList.push(cid);
     address(uint160(ownerOf(cid))).transfer(trade.price);
   }
 
@@ -47,14 +38,14 @@ contract TradePurchaser is Trade {
       uint256
     ) 
   {
-    return tradePurchased[msg.sender].length;
+    return tradePurchased[msg.sender].purchaseList.length;
   }
 
   modifier rangeTradeIndex(
     uint256 index
   ) 
   {
-    require(tradePurchased[msg.sender].length < index, "index overflow");
+    require(tradePurchased[msg.sender].purchaseList.length < index, "index overflow");
     _;
   }
 
@@ -70,7 +61,7 @@ contract TradePurchaser is Trade {
       uint256
     ) 
   {
-    return tradePurchased[msg.sender][index];
+    return tradePurchased[msg.sender].purchaseList[index];
   }
 
   // step

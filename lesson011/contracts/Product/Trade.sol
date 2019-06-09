@@ -6,6 +6,8 @@ contract Trade is Article {
   struct TradeStruct {
     uint256 price; // 一次販売価格
     uint256 ratio; // 再販報酬率 0 <= ratio <= 100
+    uint256 limitSupply; // 発行上限
+    uint256 totalSupply; // 発行数
     bool publish; // 記事販売ステータス(true:販売中/false:販売停止中)
     mapping(address  => bool) customerMap;
   }
@@ -20,6 +22,7 @@ contract Trade is Article {
     uint256 cid, 
     uint256 price,
     uint256 ratio,
+    uint256 limitSupply,
     bool publish
   ) 
     external
@@ -31,6 +34,7 @@ contract Trade is Article {
     trade.price = price;
     trade.publish = publish;
     trade.ratio = ratio;
+    trade.limitSupply = limitSupply;
     trade.customerMap[msg.sender] = true;
   }
 
@@ -41,6 +45,9 @@ contract Trade is Article {
     view 
     returns(
       uint256 price,
+      uint256 ratio,
+      uint256 limitSupply,
+      uint256 totalSupply,
       bool publish
     )
   {
@@ -48,6 +55,9 @@ contract Trade is Article {
     TradeStruct storage trade = tradeMap[cid];
     return (
       trade.price,
+      trade.ratio,
+      trade.limitSupply,
+      trade.totalSupply,
       trade.publish
     );
   }
@@ -60,7 +70,7 @@ contract Trade is Article {
     _;
   }
 
-  function getContent(
+  function getTradeContent(
     uint256 cid
   ) 
     external 
@@ -84,15 +94,23 @@ contract Trade is Article {
     _;
   }
 
+  modifier notLimitSupply(uint256 cid) {
+    TradeStruct storage trade = tradeMap[cid];
+    require(trade.limitSupply > trade.totalSupply, "supply overflow");
+    _;
+  }
+
   function _purchaseTrade(
     uint256 cid
   )
     internal
+    notLimitSupply(cid)
     notTradePurchased(cid)
   {
     require(_exists(cid));
     TradeStruct storage trade = tradeMap[cid];
     trade.customerMap[msg.sender] = true;
+    trade.totalSupply++;
   }
 
   // step

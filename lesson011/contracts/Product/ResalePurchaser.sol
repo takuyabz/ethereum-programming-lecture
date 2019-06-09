@@ -1,32 +1,35 @@
 pragma solidity ^0.5.0;
 
-import "./Resale.sol";
+import "./ResaleHistory.sol";
 
-contract ResalePurchaser is Resale {
-  mapping(address => uint[]) resalePurchased;
+contract ResalePurchaser is ResaleHistory {
+  struct ResalePurchaseStruct {
+    uint256[] purchaseList;
+  }
+  mapping(address => ResalePurchaseStruct) private resalePurchased;
 
   modifier sameResalePrice(
-    uint256 cid
+    uint256 tid
   ) 
   {
-    ResaleStruct storage resale = resaleMap[cid];
+    ResaleStruct storage resale = resaleMap[tid];
     require(msg.value == resale.price, "resale price error");
     _;
   }
 
   function purchaseResale(
-    uint256 cid,
+    uint256 tid,
     address seller
   )
     external
-    sameResalePrice(cid)
+    sameResalePrice(tid)
     payable
   {
-    super._purchaseResale(cid);
-    ResaleStruct storage resale = resaleMap[cid];
-    resalePurchased[ownerOf(cid)].push(cid);
-    TradeStruct storage trade = tradeMap[cid];
-    address(uint160(ownerOf(cid))).transfer(resale.price * (trade.ratio) / 100);
+    super._purchaseResale(tid);
+    ResaleStruct storage resale = resaleMap[tid];
+    resalePurchased[ownerOf(resale.cid)].purchaseList.push(resale.cid);
+    TradeStruct storage trade = tradeMap[resale.cid];
+    address(uint160(ownerOf(resale.cid))).transfer(resale.price * (trade.ratio) / 100);
     address(uint160(seller)).transfer(resale.price * ( 100 - trade.ratio) / 100);
   }
 
@@ -37,14 +40,14 @@ contract ResalePurchaser is Resale {
       uint256
     ) 
   {
-    return resalePurchased[msg.sender].length;
+    return resalePurchased[msg.sender].purchaseList.length;
   }
 
   modifier rangeResaleIndex(
     uint256 index
   ) 
   {
-    require(resalePurchased[msg.sender].length < index, "index overflow");
+    require(resalePurchased[msg.sender].purchaseList.length < index, "index overflow");
     _;
   }
 
@@ -58,7 +61,7 @@ contract ResalePurchaser is Resale {
       uint256
     ) 
   {
-    return resalePurchased[msg.sender][index];
+    return resalePurchased[msg.sender].purchaseList[index];
   }
 
   // step
