@@ -1,7 +1,0 @@
-pragma solidity ^0.5.0;
-
-contract SampleHello {
-  function sayHello() public pure returns(string memory) {
-    return "Hello World! from Smart Contract!";
-  }
-}

@@ -1,7 +1,21 @@
 # Tutorial
 
-ロール
-管理者(WhitelistAdmin)、投稿者(Whitelisted)、購入者(Signer)、閲覧者(None)
+Source Code Design Overview.
+
+01. Front End View Design
+02. Module Organization
+03. Workflow Driven Development
+04. Test Driven Development
+05. Check All Test Green.
+
+## Use Case with Workflow
+
+## Role
+
+- 管理者： WhitelistAdmin
+- 投稿者： Whitelisted / Author
+- 購入者： Purchaser / Signer / Seller
+- 閲覧者： TradePurchase / ResalePurchaser
 
 01. 管理者は投稿者（WhitelistedRole.addWhitelisted）を追加できる
 02. 投稿者は記事を投稿、変更ができる
@@ -16,71 +30,27 @@
   09-01. 再販購入者が購入する際は購入者に再販報酬率を除いた価格が還元できる
 10. 再販購入者は再販購入記事を閲覧できる
 
----
-06. 管理者は投稿者を削除できる
+... and more.
+Check Smtart Contracts, And Test Code.
 
 ~~~ bash terminal
 cp -R lesson010 lesson011
 cd lesson011
 ~~~
 
-# Pure Article
-
-contract Article {
-  struct Content {
-    address owner;
-    string title;
-    string description;
-    string imgsrc;
-    uint datetime;
-  }
-  mapping(uint => Content) contents;
-  mapping(address => uint) idArticle;
-  uint cid;
-}
-
-
-~~~ bash terminal
-touch contracts/Whitelist.sol
-code contracts/Whitelist.sol
-touch contracts/Owned.sol
-code contracts/Owned.sol
-touch migrations/3_deploy_whitelist.js
-code migrations/3_deploy_whitelist.js
-touch test/Whitelist.test.js
-code test/Whitelist.test.js
-truffle compile
-truffle develop
-~~~
-
-~~~ bash truffle develop
-develop>compile
-develop>migrate
-develop>test
-~~~
-
-~~~ Result
-Compiling your contracts...
-===========================
-> Compiling ./contracts/Owned.sol
-> Compiling ./contracts/Whitelist.sol
-> Artifacts written to /var/folders/fz/m0qx15x126d2jslmjqf_0rmh0000gq/T/test-11957-58446-a90jk.1imu9e
-> Compiled successfully using:
-   - solc: 0.5.8+commit.23d335f2.Emscripten.clang
-
-
-
-  Contract: Whitelist
-    ✓ greeting
-    ✓ getAuthor Index 0
-    ✓ getAuthor Index overflow
-    ✓ getLastIndex
-    ✓ isAuthor
-    ✓ addAuthor (120ms)
-    ✓ isNotAuthor
-    ✓ only AddAuthor (49ms)
-    ✓ OPS Test (66ms)
-    ✓ Update Author Publish (108ms)
+~~~ bash terminal sample
+npm install openzeppelin-solidity
+npm install truffle-assertions
+mkdir contracts/Product
+code contracts/Product/Article.sol
+code contracts/Product/Trade.sol
+code contracts/Product/TradeHistory.sol
+code contracts/Product/TradePurchaser.sol
+code contracts/Product/Resale.sol
+code contracts/Product/ResaleHistory.sol
+code contracts/Product/ResalePurchaser.sol
+code contracts/Product/Main.sol
+code migrations/2_deploy
 ~~~
 
 Lesson finish!
