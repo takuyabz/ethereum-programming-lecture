@@ -17,6 +17,8 @@ Source Code Design Overview.
 - 購入者： Purchaser / Signer / Seller
 - 閲覧者： TradePurchase / ResalePurchaser
 
+## Use Case
+
 01. 管理者は投稿者（WhitelistedRole.addWhitelisted）を追加できる
 02. 投稿者は記事を投稿、変更ができる
 03. 閲覧者は記事数を取得できる
@@ -32,6 +34,8 @@ Source Code Design Overview.
 
 ... and more.
 Check Smtart Contracts, And Test Code.
+
+## Operation
 
 ~~~ bash terminal
 cp -R lesson010 lesson011
