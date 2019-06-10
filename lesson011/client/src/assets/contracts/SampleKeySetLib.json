@@ -7792,12 +7792,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0xA2d751cc391fa8D77cC1481b8EC53d6BBca0cAb9",
-      "transactionHash": "0xa1e4dd6164e2eaa042806172c10e2c7bcbb063d09d1ee8f9c5401a0e5aed8dac"
+      "address": "0x60B62AdBbC95d76E3C52E08e1405DC31b226B633",
+      "transactionHash": "0xcb59c91350856f2eeb22a894719d38c3da84959d38b6fce184aeb9f6ecddbb16"
     }
   },
   "schemaVersion": "3.0.10",
-  "updatedAt": "2019-06-09T02:07:45.182Z",
+  "updatedAt": "2019-06-09T14:11:14.036Z",
   "devdoc": {
     "methods": {}
   },

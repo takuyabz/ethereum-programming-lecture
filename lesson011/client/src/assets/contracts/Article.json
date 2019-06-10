@@ -5739,12 +5739,12 @@
         }
       },
       "links": {},
-      "address": "0x18a7Add2C5C6dEb0CDDEC5F05a5FF1d4848AFC95",
-      "transactionHash": "0xc4c77b3659008b7a98c64d012813aabff89f636f4642ab5c74a98a10fce40596"
+      "address": "0x31f38809D96E9466A41E84082b00103F66292F00",
+      "transactionHash": "0x5a7135390a4cbb989ad66596c05683d7aeeabfe7b64c31a29d98d671a0655b5a"
     }
   },
   "schemaVersion": "3.0.10",
-  "updatedAt": "2019-06-09T02:07:45.903Z",
+  "updatedAt": "2019-06-09T14:11:15.602Z",
   "devdoc": {
     "methods": {
       "approve(address,uint256)": {

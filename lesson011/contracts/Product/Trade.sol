@@ -18,6 +18,13 @@ contract Trade is Article {
     _;
   }
 
+  modifier ratioSupply(uint256 cid, uint256 limitSupply) {
+    require(limitSupply > 0, "limit supply must be over 0");
+    TradeStruct storage trade = tradeMap[cid];
+    require(trade.totalSupply <= limitSupply, "limit supply must be over totalSupply");
+    _;
+  }
+
   function updateTradeInfo(
     uint256 cid, 
     uint256 price,
@@ -27,8 +34,9 @@ contract Trade is Article {
   ) 
     external
     ratioRange(ratio)
+    ratioSupply(cid, limitSupply)
   {
-    require(ownerOf(cid) == msg.sender);
+    require(ownerOf(cid) == msg.sender,"must be owner");
     require(_exists(cid));
     TradeStruct storage trade = tradeMap[cid];
     trade.price = price;
@@ -112,21 +120,4 @@ contract Trade is Article {
     trade.customerMap[msg.sender] = true;
     trade.totalSupply++;
   }
-
-  // step
-  // accounts = await web3.eth.getAccounts();
-  // i = await Trade.deployed()
-  // i.addWhitelisted(accounts[0]);
-  // i.isWhitelisted(accounts[0]);
-  // i.createContent("hello","world","img.png");
-  // i.updateTradeInfo(0,100,true);
-  // i.getTradeInfo(0);
-  // i.getContent(0);
-  // i.getContent(0, {from: accounts[0]});
-  // i.getContent(0, {from: accounts[1]});
-  // i.purchase(0, {from: accounts[1], value: 100});
-  // i.getContent(0, {from: accounts[0]});
-  // i.getContent(0, {from: accounts[1]});
-
-  //
 }

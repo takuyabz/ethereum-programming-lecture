@@ -25,11 +25,21 @@ contract TradeHistory is Trade {
     logItem.cid = cid;
   }
 
+  function getLastTid() public view returns(uint256) {
+    return lastIndex;
+  }
+
+  modifier rangeIndex(uint256 tid) {
+    require(lastIndex > tid, "trade id over flow");
+    _;
+  }
+
 
   function getLogTrade(
     uint256 tid
   )
     public
+    rangeIndex(tid)
     view 
     returns(
       uint256,
