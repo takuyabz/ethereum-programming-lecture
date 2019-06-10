@@ -8192,12 +8192,18 @@
     "1560135330592": {
       "events": {},
       "links": {},
-      "address": "0xd59D95b2AFeab20fF7572602478d9C440E36a452",
-      "transactionHash": "0xcc17ac797fc638285f70d2fa79f39436eee2091ef7fa78b94feec7f961c62c59"
+      "address": "0x452CD152D9C76e832A85c825585f3eAAA64eABFE",
+      "transactionHash": "0xe1abad73e7c909a2df3310a176e385174e5a7a5c28f248659a6c2dae05af2067"
+    },
+    "1560148917008": {
+      "events": {},
+      "links": {},
+      "address": "0x3E8Fd4790E5429c4542082Dd6e0EEA6F33e3C52e",
+      "transactionHash": "0x183ad1ccf55b938fd4ad4d9d7c193f848215e544c68cb2303b10bbd18b3571d0"
     }
   },
   "schemaVersion": "3.0.10",
-  "updatedAt": "2019-06-10T03:16:50.165Z",
+  "updatedAt": "2019-06-10T07:08:11.077Z",
   "devdoc": {
     "methods": {}
   },

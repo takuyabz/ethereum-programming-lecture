@@ -25,6 +25,11 @@ contract Trade is Article {
     _;
   }
 
+  modifier priceTradeRange(uint256 price) {
+    require(price > 0, "price must be over zero");
+    _;
+  }
+
   function updateTradeInfo(
     uint256 cid, 
     uint256 price,
@@ -35,6 +40,7 @@ contract Trade is Article {
     external
     ratioRange(ratio)
     ratioSupply(cid, limitSupply)
+    priceTradeRange(price)
   {
     require(ownerOf(cid) == msg.sender,"must be owner");
     require(_exists(cid));
@@ -70,7 +76,7 @@ contract Trade is Article {
     );
   }
 
-  modifier onlySigner(
+  modifier onlySignerTrade(
     uint256 cid
   ) {
     TradeStruct storage trade = tradeMap[cid];
@@ -79,21 +85,21 @@ contract Trade is Article {
   }
 
   function getTradeContent(
-    uint256 cid
+    uint256 _cid
   ) 
     external 
     view 
-    onlySigner(cid)
+    onlySignerTrade(cid)
     returns(
-      uint256, 
-      string memory, 
-      string memory, 
-      string memory, 
-      address 
+      uint256 cid,
+      string memory title, 
+      string memory description, 
+      string memory imgsrc, 
+      address owner
     ) 
   {
-    require(_exists(cid));
-    return super._getContent(cid);
+    require(_exists(_cid));
+    return super._getContent(_cid);
   }
 
   modifier notTradePurchased(uint256 cid) {
@@ -102,7 +108,7 @@ contract Trade is Article {
     _;
   }
 
-  modifier notLimitSupply(uint256 cid) {
+  modifier notLimitSupplyTrade(uint256 cid) {
     TradeStruct storage trade = tradeMap[cid];
     require(trade.limitSupply >= trade.totalSupply + 1, "supply overflow");
     _;
@@ -112,7 +118,7 @@ contract Trade is Article {
     uint256 cid
   )
     internal
-    notLimitSupply(cid)
+    notLimitSupplyTrade(cid)
     notTradePurchased(cid)
   {
     require(_exists(cid));

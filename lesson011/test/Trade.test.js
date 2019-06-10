@@ -58,6 +58,32 @@ contract("Trade", async accounts => {
 
   });
 
+  it("update Trade Info with price 0", async () => {
+    instance = await Trade.deployed();
+    returnVal = await instance.isWhitelisted(accounts[0]);
+    assert.equal(returnVal, true, "content logic fail");
+    tradeInfo = {
+      cid: 0,
+      price: 0,
+      ratio: 10,
+      limitSupply: 10,
+      publish: false
+    };
+
+    truffleAssert.reverts(
+      instance.updateTradeInfo(
+        tradeInfo.cid,
+        tradeInfo.price,
+        tradeInfo.ratio,
+        tradeInfo.limitSupply,
+        tradeInfo.publish
+      )
+      ,
+      "price must be over zero"
+    );
+
+  });
+
   it("update Trade info other account", async () => {
     instance = await Trade.deployed();
     returnVal = await instance.isWhitelisted(accounts[1]);

@@ -239,22 +239,22 @@ contract("TradePurchaser", async accounts => {
     );
 
     returnVal = await instance.getTradeContent(cid);
-    assert.equal(new BN(returnVal[0]).toString(), new BN(content.cid).toString(), "get content cid fail");
-    assert.equal(returnVal[1], content.title, "get content title fail");
-    assert.equal(returnVal[2], content.description, "get content description fail");
-    assert.equal(returnVal[3], content.imgsrc, "get content img src fail");
-    assert.equal(returnVal[4], accounts[0], "get content address fail");
+    assert.equal(new BN(returnVal.cid).toString(), new BN(content.cid).toString(), "get content cid fail");
+    assert.equal(returnVal.title, content.title, "get content title fail");
+    assert.equal(returnVal.description, content.description, "get content description fail");
+    assert.equal(returnVal.imgsrc, content.imgsrc, "get content img src fail");
+    assert.equal(returnVal.owner, accounts[0], "get content address fail");
 
     returnVal = await instance.getTradeContent(cid,
       {
         from: accounts[1]
       }
     );
-    assert.equal(new BN(returnVal[0]).toString(), new BN(content.cid).toString(), "get content cid fail");
-    assert.equal(returnVal[1], content.title, "get content title fail");
-    assert.equal(returnVal[2], content.description, "get content description fail");
-    assert.equal(returnVal[3], content.imgsrc, "get content img src fail");
-    assert.equal(returnVal[4], accounts[0], "get content address fail");
+    assert.equal(new BN(returnVal.cid).toString(), new BN(content.cid).toString(), "get content cid fail");
+    assert.equal(returnVal.title, content.title, "get content title fail");
+    assert.equal(returnVal.description, content.description, "get content description fail");
+    assert.equal(returnVal.imgsrc, content.imgsrc, "get content img src fail");
+    assert.equal(returnVal.owner, accounts[0], "get content address fail");
 
     truffleAssert.reverts(
       instance.getTradeContent(cid,
@@ -422,7 +422,5 @@ contract("TradePurchaser", async accounts => {
       ),
       "trade exist"
     );
-    
   })
-
 });

@@ -42,9 +42,9 @@ contract TradeHistory is Trade {
     rangeIndex(tid)
     view 
     returns(
-      uint256,
-      address,
-      address
+      uint256 cid,
+      address owner,
+      address purchaser
     )
   {
     TradeHistoryStruct storage logItem = history[tid];

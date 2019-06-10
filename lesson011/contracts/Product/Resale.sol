@@ -15,6 +15,11 @@ contract Resale is TradePurchaser {
   }
   mapping(uint256 => ResaleStruct) resaleMap;
 
+  modifier priceResaleRange(uint256 price) {
+    require(price > 0, "price resale must be over zero");
+    _;
+  }
+
   function updateResaleInfo(
     uint256 tid,
     uint256 price,
@@ -22,9 +27,10 @@ contract Resale is TradePurchaser {
     bool publish
   ) 
     external  
+    priceResaleRange(price)
   {
     (uint256 cid, address owner, address purchaser) = super.getLogTrade(tid);
-    require(purchaser == msg.sender);
+    require(purchaser == msg.sender, "must be update resale info purchaser");
     require(_exists(cid));
     ResaleStruct storage resale = resaleMap[tid];
     resale.cid = cid;
@@ -42,13 +48,13 @@ contract Resale is TradePurchaser {
     external 
     view 
     returns(
-      address,
-      address,
-      uint256,
-      uint256,
-      uint256,
-      uint256,
-      bool
+      address owner,
+      address seller,
+      uint256 cid,
+      uint256 price,
+      uint256 limitSupply,
+      uint256 totalSupply,
+      bool publish
     )
   {
     ResaleStruct storage resale = resaleMap[tid];
@@ -64,11 +70,11 @@ contract Resale is TradePurchaser {
     );
   }
 
-  modifier onlySigner(
+  modifier onlySignerResale(
     uint256 tid
   ) {
     ResaleStruct storage resale = resaleMap[tid];
-    require(resale.customerMap[msg.sender], "not signed, please updateInfo");
+    require(resale.customerMap[msg.sender], "not signed, please resale updateInfo");
     _;
   }
 
@@ -77,13 +83,13 @@ contract Resale is TradePurchaser {
   )
     external 
     view 
-    onlySigner(tid)
+    onlySignerResale(tid)
     returns(
-      uint256, 
-      string memory, 
-      string memory, 
-      string memory, 
-      address 
+      uint256 cid, 
+      string memory title, 
+      string memory description, 
+      string memory imgsrc, 
+      address owner
     ) 
   {
     ResaleStruct storage resale = resaleMap[tid];
@@ -97,38 +103,22 @@ contract Resale is TradePurchaser {
     _;
   }
 
-  modifier notLimitSupply(uint256 tid) {
+  modifier notLimitSupplyResale(uint256 tid) {
     ResaleStruct storage trade = resaleMap[tid];
-    require(trade.limitSupply > trade.totalSupply, "supply overflow");
+    require(trade.limitSupply >= trade.totalSupply + 1, "supply overflow resale");
     _;
   }
-
 
   function _purchaseResale(
     uint256 tid
   )
     internal
-    notLimitSupply(tid)
     notResalePurchased(tid)
+    notLimitSupplyResale(tid)
   {
     ResaleStruct storage resale = resaleMap[tid];
     require(_exists(resale.cid));
     resale.customerMap[msg.sender] = true;
+    resale.totalSupply = resale.totalSupply+1;
   }
-
-  // step
-  // accounts = await web3.eth.getAccounts();
-  // i = await Trade.deployed()
-  // i.addWhitelisted(accounts[0]);
-  // i.isWhitelisted(accounts[0]);
-  // i.createContent("hello","world","img.png");
-  // i.updateTradeInfo(0,100,true);
-  // i.getTradeInfo(0);
-  // i.getContent(0);
-  // i.getContent(0, {from: accounts[0]});
-  // i.getContent(0, {from: accounts[1]});
-  // i.purchase(0, {from: accounts[1], value: 100});
-  // i.getContent(0, {from: accounts[0]});
-  // i.getContent(0, {from: accounts[1]});
-
 }
