@@ -50,7 +50,17 @@ code contracts/Product/Resale.sol
 code contracts/Product/ResaleHistory.sol
 code contracts/Product/ResalePurchaser.sol
 code contracts/Product/Main.sol
-code migrations/2_deploy
+code migrations/2_deploy.product.js
+code test/Article.test.js
+code test/Trade.test.js
+code test/TradePurchaser.test.js
+code test/TradeHistory.test.js
+code test/Resale.test.js
+code test/ResalePurchaser.test.js
+code test/ResaleHistory.test.js
+truffle compile
+truffle migrate --reset
+truffle test
 ~~~
 
 Lesson finish!

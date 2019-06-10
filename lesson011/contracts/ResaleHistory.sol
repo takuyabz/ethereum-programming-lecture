@@ -29,11 +29,21 @@ contract ResaleHistory is Resale {
     logItem.seller = purchaser;
     logItem.purchaser = msg.sender;
   }
+
+  function getLastRid() public view returns(uint256) {
+    return lastIndex;
+  }
+
+  modifier rangeIndexResale(uint256 rid) {
+    require(lastIndex > rid, "trade id over flow");
+    _;
+  }
   
   function getLogResale(
     uint256 rid
   )
     public
+    rangeIndexResale(rid)
     view 
     returns(
       uint256,
