@@ -154,7 +154,7 @@ contract("TradePurchaser", async accounts => {
     assert.equal(new BN(returnVal).toString(), new BN('1').toString(), "purchased logic fail");
 
     truffleAssert.reverts(
-      instance.tradeAtIndex(1,
+      instance.tradeAtIndex(2,
         {
           from: accounts[1]
         }
@@ -162,5 +162,42 @@ contract("TradePurchaser", async accounts => {
       ,
       "index overflow"
     );
+  });
+  it("view purchase content", async() => {
+    const BN = web3.utils.BN;
+    instance = await TradePurchaser.deployed();
+
+    cid = await instance.tradeAtIndex(0,
+      {
+        from: accounts[1]
+      }
+    );
+
+    returnVal = await instance.getTradeContent(cid);
+    assert.equal(new BN(returnVal[0]).toString(), new BN(content.cid).toString(), "get content cid fail");
+    assert.equal(returnVal[1], content.title, "get content title fail");
+    assert.equal(returnVal[2], content.description, "get content description fail");
+    assert.equal(returnVal[3], content.imgsrc, "get content img src fail");
+    assert.equal(returnVal[4], accounts[0], "get content address fail");
+
+    returnVal = await instance.getTradeContent(cid,
+      {
+        from: accounts[1]
+      }
+    );
+    assert.equal(new BN(returnVal[0]).toString(), new BN(content.cid).toString(), "get content cid fail");
+    assert.equal(returnVal[1], content.title, "get content title fail");
+    assert.equal(returnVal[2], content.description, "get content description fail");
+    assert.equal(returnVal[3], content.imgsrc, "get content img src fail");
+    assert.equal(returnVal[4], accounts[0], "get content address fail");
+
+    truffleAssert.reverts(
+      instance.getTradeContent(cid,
+      {
+        from: accounts[2]
+      })
+      ,
+      "not signed, please updateInfo"
+    )
   });
 });
