@@ -2,20 +2,20 @@ const TradePurchaser = artifacts.require("TradePurchaser");
 const truffleAssert = require("truffle-assertions");
 
 contract("TradePurchaser", async accounts => {
-  content = {
-    title: "Hello",
-    description: "World",
-    imgsrc: "https://example.com/sample.png"
-  };
-  tradeInfo = {
-    cid: 0,
-    price: 100,
-    ratio: 10,
-    limitSupply: 10,
-    publish: false
-  };
-
   it("setup", async () => {
+    content = {
+      title: "Hello",
+      description: "World",
+      imgsrc: "https://example.com/sample.png"
+    };
+    tradeInfo = {
+      cid: 0,
+      price: 100,
+      ratio: 10,
+      limitSupply: 1,
+      publish: false
+    };
+  
     // STEP. 01 Get Deployed Instance
     instance = await TradePurchaser.deployed();
     returnVal = await instance.isWhitelisted(accounts[0]);
@@ -60,6 +60,19 @@ contract("TradePurchaser", async accounts => {
   });
 
   it("purchase Trade price fail", async () => {
+    content = {
+      title: "Hello",
+      description: "World",
+      imgsrc: "https://example.com/sample.png"
+    };
+    tradeInfo = {
+      cid: 0,
+      price: 100,
+      ratio: 10,
+      limitSupply: 1,
+      publish: false
+    };
+  
     instance = await TradePurchaser.deployed();
     await truffleAssert.reverts(
       instance.purchaseTrade(
@@ -73,7 +86,7 @@ contract("TradePurchaser", async accounts => {
     );
   });
 
-  it("price calculation sample", async() => {
+  it("price calculation sample", async () => {
     const BN = web3.utils.BN;
     returnVal = web3.utils.fromWei(new BN('1'), 'ether');
     assert.equal(returnVal, "0.000000000000000001", "Big Number To Eth fail");
@@ -89,9 +102,22 @@ contract("TradePurchaser", async accounts => {
   });
 
   it("purchase Trade", async () => {
+    content = {
+      title: "Hello",
+      description: "World",
+      imgsrc: "https://example.com/sample.png"
+    };
+    tradeInfo = {
+      cid: 0,
+      price: 100,
+      ratio: 10,
+      limitSupply: 1,
+      publish: false
+    };
+  
     const BN = web3.utils.BN;
     balanceBeforeTransferTo = await web3.eth.getBalance(accounts[0]);
-    
+
     instance = await TradePurchaser.deployed();
 
     returnVal = await instance.countTradePurchased(
@@ -112,8 +138,8 @@ contract("TradePurchaser", async accounts => {
 
     assert.equal(
       new BN(balanceAfterTransferTo).
-      sub(new BN(balanceBeforeTransferTo)).
-      toString(), 
+        sub(new BN(balanceBeforeTransferTo)).
+        toString(),
       tradeInfo.price,
       "transfer eth"
     );
@@ -126,7 +152,20 @@ contract("TradePurchaser", async accounts => {
     assert.equal(new BN(returnVal).toString(), new BN('1').toString(), "purchased logic fail");
   });
 
-  it("trade at index", async() => {
+  it("trade at index", async () => {
+    content = {
+      title: "Hello",
+      description: "World",
+      imgsrc: "https://example.com/sample.png"
+    };
+    tradeInfo = {
+      cid: 0,
+      price: 100,
+      ratio: 10,
+      limitSupply: 1,
+      publish: false
+    };
+  
     const BN = web3.utils.BN;
     instance = await TradePurchaser.deployed();
     returnVal = await instance.countTradePurchased(
@@ -143,7 +182,20 @@ contract("TradePurchaser", async accounts => {
     );
     assert.equal(new BN(returnVal).toString(), new BN('0').toString(), "purchased logic fail");
   });
-  it("trade at index over flow", async() => {
+  it("trade at index over flow", async () => {
+    content = {
+      title: "Hello",
+      description: "World",
+      imgsrc: "https://example.com/sample.png"
+    };
+    tradeInfo = {
+      cid: 0,
+      price: 100,
+      ratio: 10,
+      limitSupply: 1,
+      publish: false
+    };
+  
     const BN = web3.utils.BN;
     instance = await TradePurchaser.deployed();
     returnVal = await instance.countTradePurchased(
@@ -163,7 +215,20 @@ contract("TradePurchaser", async accounts => {
       "index overflow"
     );
   });
-  it("view purchase content", async() => {
+  it("view purchase content", async () => {
+    content = {
+      title: "Hello",
+      description: "World",
+      imgsrc: "https://example.com/sample.png"
+    };
+    tradeInfo = {
+      cid: 0,
+      price: 100,
+      ratio: 10,
+      limitSupply: 1,
+      publish: false
+    };
+  
     const BN = web3.utils.BN;
     instance = await TradePurchaser.deployed();
 
@@ -193,11 +258,171 @@ contract("TradePurchaser", async accounts => {
 
     truffleAssert.reverts(
       instance.getTradeContent(cid,
-      {
-        from: accounts[2]
-      })
+        {
+          from: accounts[2]
+        })
       ,
       "not signed, please updateInfo"
     )
   });
+
+  it("purchase Trade limit supply overflow", async () => {
+    content = {
+      title: "Hello",
+      description: "World",
+      imgsrc: "https://example.com/sample.png"
+    };
+    tradeInfo = {
+      cid: 0,
+      price: 100,
+      ratio: 10,
+      limitSupply: 1,
+      publish: false
+    };
+  
+    balanceBeforeTransferTo = await web3.eth.getBalance(accounts[0]);
+
+    instance = await TradePurchaser.deployed();
+
+    returnVal = await instance.getTradeInfo(tradeInfo.cid);
+
+    assert.equal(returnVal.price, tradeInfo.price, "trade info logic fail price");
+    assert.equal(returnVal.ratio, tradeInfo.ratio, "trade info logic fail ratio");
+    assert.equal(returnVal.limitSupply, tradeInfo.limitSupply, "trade info logic fail limitSupply");
+    assert.equal(returnVal.totalSupply, 1, "trade info logic fail totalSupply");
+    assert.equal(returnVal.publish, tradeInfo.publish, "trade info logic fail publish");
+
+    await truffleAssert.reverts(
+      instance.purchaseTrade(
+        tradeInfo.cid,
+        {
+          from: accounts[2],
+          value: tradeInfo.price
+        }
+      )
+      ,
+      "supply overflow"
+    );
+  });
+
+  
+  it("purchase Trade limit supply update", async () => {
+    content = {
+      title: "Hello",
+      description: "World",
+      imgsrc: "https://example.com/sample.png"
+    };
+    tradeInfo = {
+      cid: 0,
+      price: 100,
+      ratio: 10,
+      limitSupply: 1,
+      publish: false
+    };
+  
+    balanceBeforeTransferTo = await web3.eth.getBalance(accounts[0]);
+
+    instance = await TradePurchaser.deployed();
+
+    returnVal = await instance.getTradeInfo(tradeInfo.cid);
+
+    assert.equal(returnVal.price, tradeInfo.price, "trade info logic fail price");
+    assert.equal(returnVal.ratio, tradeInfo.ratio, "trade info logic fail ratio");
+    assert.equal(returnVal.limitSupply, tradeInfo.limitSupply, "trade info logic fail limitSupply");
+    assert.equal(returnVal.totalSupply, 1, "trade info logic fail totalSupply");
+    assert.equal(returnVal.publish, tradeInfo.publish, "trade info logic fail publish");
+
+    await truffleAssert.reverts(
+      instance.purchaseTrade(
+        tradeInfo.cid,
+        {
+          from: accounts[2],
+          value: tradeInfo.price
+        }
+      )
+      ,
+      "supply overflow"
+    );
+
+    await instance.updateTradeInfo(
+      tradeInfo.cid,
+      tradeInfo.price,
+      tradeInfo.ratio,
+      tradeInfo.limitSupply + 1,
+      tradeInfo.publish
+    );
+
+    returnVal = await instance.getTradeInfo(tradeInfo.cid);
+
+    assert.equal(returnVal.price, tradeInfo.price, "trade info logic fail price");
+    assert.equal(returnVal.ratio, tradeInfo.ratio, "trade info logic fail ratio");
+    assert.equal(returnVal.limitSupply, tradeInfo.limitSupply + 1, "trade info logic fail limitSupply ");
+    assert.equal(returnVal.totalSupply, 1, "trade info logic fail totalSupply");
+    assert.equal(returnVal.publish, tradeInfo.publish, "trade info logic fail publish");
+
+    await instance.purchaseTrade(
+      tradeInfo.cid,
+      {
+        from: accounts[2],
+        value: tradeInfo.price
+      }
+    );
+
+    returnVal = await instance.getTradeInfo(tradeInfo.cid);
+
+    assert.equal(returnVal.price, tradeInfo.price, "trade info logic fail price");
+    assert.equal(returnVal.ratio, tradeInfo.ratio, "trade info logic fail ratio");
+    assert.equal(returnVal.limitSupply, tradeInfo.limitSupply + 1, "trade info logic fail limitSupply");
+    assert.equal(returnVal.totalSupply, 2, "trade info logic fail totalSupply");
+    assert.equal(returnVal.publish, tradeInfo.publish, "trade info logic fail publish");
+
+  });
+
+  it("suply exist", async()=>{
+    content = {
+      title: "Hello",
+      description: "World",
+      imgsrc: "https://example.com/sample.png"
+    };
+    tradeInfo = {
+      cid: 0,
+      price: 100,
+      ratio: 10,
+      limitSupply: 3,
+      publish: false
+    };
+  
+    balanceBeforeTransferTo = await web3.eth.getBalance(accounts[0]);
+
+    instance = await TradePurchaser.deployed();
+
+    await instance.updateTradeInfo(
+      tradeInfo.cid,
+      tradeInfo.price,
+      tradeInfo.ratio,
+      tradeInfo.limitSupply,
+      tradeInfo.publish
+    );
+
+    returnVal = await instance.getTradeInfo(tradeInfo.cid);
+
+    assert.equal(returnVal.price, tradeInfo.price, "trade info logic fail price");
+    assert.equal(returnVal.ratio, tradeInfo.ratio, "trade info logic fail ratio");
+    assert.equal(returnVal.limitSupply, tradeInfo.limitSupply, "trade info logic fail limitSupply");
+    assert.equal(returnVal.totalSupply, 2, "trade info logic fail totalSupply");
+    assert.equal(returnVal.publish, tradeInfo.publish, "trade info logic fail publish");
+
+    truffleAssert.reverts(
+      instance.purchaseTrade(
+        tradeInfo.cid,
+        {
+          from: accounts[2],
+          value: tradeInfo.price
+        }
+      ),
+      "trade exist"
+    );
+    
+  })
+
 });

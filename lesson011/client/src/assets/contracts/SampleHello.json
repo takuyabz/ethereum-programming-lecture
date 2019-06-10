@@ -281,12 +281,18 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0xBf058481207f384E217a08F998860BD17559299b",
-      "transactionHash": "0xb06f6bf4f4d161bac3bed37aec0e4f763334f1b3a5fa3cd00ef776f8f2a8df44"
+      "address": "0x8AdEA68f040B47fc22593312E50d8FE8f439cE1E",
+      "transactionHash": "0xd8430e43e49512f936461e750535c23da59f19bcbf87cbb743abf806c1c5aea5"
+    },
+    "1560135330592": {
+      "events": {},
+      "links": {},
+      "address": "0x4088c8287E4046c7cfcF463C41940B67060d8fE8",
+      "transactionHash": "0x440eefb78231afcd4330305812de38cee3fe16f00fef3d2d7f7e823af91ad8a6"
     }
   },
   "schemaVersion": "3.0.10",
-  "updatedAt": "2019-06-09T14:11:14.020Z",
+  "updatedAt": "2019-06-10T03:16:50.156Z",
   "devdoc": {
     "methods": {}
   },

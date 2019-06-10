@@ -24,7 +24,7 @@ contract TradePurchaser is TradeHistory {
     sameTradePrice(cid)
     payable
   {
-    super._purchaseTrade(cid);
+    super._purchaseTradeHistory(cid);
     TradeStruct storage trade = tradeMap[cid];
     tradePurchased[msg.sender].purchaseList.push(cid);
     address(uint160(ownerOf(cid))).transfer(trade.price);

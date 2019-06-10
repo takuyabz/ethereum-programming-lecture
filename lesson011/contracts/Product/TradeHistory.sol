@@ -12,7 +12,7 @@ contract TradeHistory is Trade {
   mapping(uint256 => TradeHistoryStruct) private history;
   uint256 private lastIndex;
 
-  function _purchaseTrade(
+  function _purchaseTradeHistory(
     uint256 cid
   )
     internal

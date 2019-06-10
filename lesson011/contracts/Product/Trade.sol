@@ -40,9 +40,9 @@ contract Trade is Article {
     require(_exists(cid));
     TradeStruct storage trade = tradeMap[cid];
     trade.price = price;
-    trade.publish = publish;
     trade.ratio = ratio;
     trade.limitSupply = limitSupply;
+    trade.publish = publish;
     trade.customerMap[msg.sender] = true;
   }
 
@@ -104,7 +104,7 @@ contract Trade is Article {
 
   modifier notLimitSupply(uint256 cid) {
     TradeStruct storage trade = tradeMap[cid];
-    require(trade.limitSupply > trade.totalSupply, "supply overflow");
+    require(trade.limitSupply >= trade.totalSupply + 1, "supply overflow");
     _;
   }
 
@@ -118,6 +118,7 @@ contract Trade is Article {
     require(_exists(cid));
     TradeStruct storage trade = tradeMap[cid];
     trade.customerMap[msg.sender] = true;
-    trade.totalSupply++;
+    trade.totalSupply = trade.totalSupply+1;
   }
+
 }
