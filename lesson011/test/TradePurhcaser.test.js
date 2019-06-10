@@ -126,4 +126,41 @@ contract("TradePurchaser", async accounts => {
     assert.equal(new BN(returnVal).toString(), new BN('1').toString(), "purchased logic fail");
   });
 
+  it("trade at index", async() => {
+    const BN = web3.utils.BN;
+    instance = await TradePurchaser.deployed();
+    returnVal = await instance.countTradePurchased(
+      {
+        from: accounts[1]
+      }
+    );
+    assert.equal(new BN(returnVal).toString(), new BN('1').toString(), "purchased logic fail");
+
+    returnVal = await instance.tradeAtIndex(0,
+      {
+        from: accounts[1]
+      }
+    );
+    assert.equal(new BN(returnVal).toString(), new BN('0').toString(), "purchased logic fail");
+  });
+  it("trade at index over flow", async() => {
+    const BN = web3.utils.BN;
+    instance = await TradePurchaser.deployed();
+    returnVal = await instance.countTradePurchased(
+      {
+        from: accounts[1]
+      }
+    );
+    assert.equal(new BN(returnVal).toString(), new BN('1').toString(), "purchased logic fail");
+
+    truffleAssert.reverts(
+      instance.tradeAtIndex(1,
+        {
+          from: accounts[1]
+        }
+      )
+      ,
+      "index overflow"
+    );
+  });
 });

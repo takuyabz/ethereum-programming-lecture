@@ -26,7 +26,7 @@ contract TradePurchaser is TradeHistory {
   {
     super._purchaseTrade(cid);
     TradeStruct storage trade = tradeMap[cid];
-    tradePurchased[ownerOf(cid)].purchaseList.push(cid);
+    tradePurchased[msg.sender].purchaseList.push(cid);
     address(uint160(ownerOf(cid))).transfer(trade.price);
   }
 
@@ -45,7 +45,7 @@ contract TradePurchaser is TradeHistory {
     uint256 index
   ) 
   {
-    require(tradePurchased[msg.sender].purchaseList.length < index, "index overflow");
+    require(tradePurchased[msg.sender].purchaseList.length > index, "index overflow");
     _;
   }
 
