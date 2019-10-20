@@ -7,11 +7,11 @@ https://nodejs.org/ja/download/
 ~~~ bash Step1 Setup Env & start ganache-cli
 node -v
 npm -v
-npm install -g truffle
+sudo npm install -g truffle
 truffle version
-npm install -g ganache-cli
+sudo npm install -g ganache-cli
 ganache-cli --version
-ganacha-cli
+ganache-cli
 ~~~
 
 ~~~ Result Output
