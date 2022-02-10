@@ -28,7 +28,7 @@
     "css-loader": "^0.28.7",
     "file-loader": "^1.1.4",
     "json-loader": "^0.5.7",
-    "node-sass": "^4.5.3",
+    "node-sass": "^7.0.0",
     "sass-loader": "^6.0.6",
     "truffle": "^5.0.21",
     "truffle-contract": "^4.0.19",
