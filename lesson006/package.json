@@ -13,7 +13,7 @@
   "author": "Takuya Sato <business@satotakuya.jp> (https://www.satotakuya.jp/)",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.3"
   },
   "devDependencies": {
     "truffle-contract": "^4.0.18"
